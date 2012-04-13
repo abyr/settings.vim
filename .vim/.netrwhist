@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/abyr/src/huduyou/tests/application/modules'
+let g:netrw_dirhist_2='/home/abyr/src/huduyou/tests/application'
+let g:netrw_dirhist_3='/home/abyr/src/huduyou/tests'
+let g:netrw_dirhist_4='/home/abyr/src/huduyou'
+let g:netrw_dirhist_5='/home/abyr/src/huduyou/application'
+let g:netrw_dirhist_6='/home/abyr/src/huduyou/application/modules'
+let g:netrw_dirhist_7='/home/abyr/src/huduyou/application/modules/provider'
+let g:netrw_dirhist_8='/home/abyr/src/huduyou/application/modules/provider/controllers'
