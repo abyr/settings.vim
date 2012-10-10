@@ -7,6 +7,13 @@ set nu
 
 set syntax=on
 
+syntax on
+set nocompatible
+filetype plugin on
+set ofu=syntaxcomplete#Complete
+
+set shortmess=a
+
 colorscheme wombat
 
 set softtabstop=4
