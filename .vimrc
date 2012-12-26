@@ -132,17 +132,38 @@ imap <F5> <esc><esc>:BufExplorer<cr>
 map <F6> :bp<cr>
 vmap <F6> <esc>:bp<cr>i
 imap <F6> <esc>:bp<cr>i
-"
+
 " F7 - next buff
 map <F7> :bn<cr>
 vmap <F7> <esc>:bn<cr>i
 imap <F7> <esc>:bn<cr>i
 
-" F10 exit
-menu Exit.quit :quit<CR>
-menu Exit.quit! :quit!<CR>
-menu Exit.save :exit<CR>
+" F8 - PHP syntax check
+map <F8> :!php -l %<cr>
+
+" F9 - exit
+set wildmenu
+set wcm=<Tab>
+menu Exit.quit     :quit<CR>
+menu Exit.quit!    :quit!<CR>
+menu Exit.save     :exit<CR>
 menu Exit.bdelete :bdelete<CR>
 menu Exit.bdelete! :bdelete!<CR>
-map <F10> :emenu Exit.<tab>
+map <F9> :emenu Exit.<Tab>
 
+function! InsertTabWrapper(direction)
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  elseif "backward" == a:direction
+    return "\<c-p>"
+  else
+    return "\<c-n>"
+  endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper ("forward")<cr>
+inoremap <s-tab> <c-r>=InsertTabWrapper ("backward")<cr>
+
+let Tlist_Use_Right_Window   = 1
+
+" end
