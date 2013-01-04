@@ -1,60 +1,51 @@
 "
 " abyr
-" @see http://habrahabr.ru/post/65518/
 "
-
-set nu
-
-set syntax=on
-
-syntax on
-set nocompatible
-filetype plugin on
-set ofu=syntaxcomplete#Complete
-
-set shortmess=a
-
 colorscheme wombat
 
+filetype off
+filetype plugin indent on
+
+set background=dark
+set nu
+set syntax=on
+set nocompatible
+set ofu=syntaxcomplete#Complete
+set shortmess=a
 set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 set smarttab
-
 set smartindent
-
+set linebreak
 set et
 set wrap
-
 set ai
 set cin
-
 set ruler 
-
 set showmatch 
 set hlsearch
 set incsearch
+set nohlsearch
 set ignorecase
-
 set lz
-
 set listchars=tab:··
 set list
-
 set ffs=unix,dos,mac
 set fencs=utf-8,cp1251,koi8-r,ucs-2,cp866
-
 set showcmd
-
-"mouse
 set mouse=a
 set mousemodel=popup
-"if !has('gui_running')
-"    set mouse=
-"endif
-
 set guioptions-=T 
 set guioptions-=m 
+set novisualbell
+set nobackup
+set noswapfile
+
+set encoding=utf8
+
+filetype plugin on
+syntax on
 
 "font
 if has('gui')
@@ -165,5 +156,22 @@ inoremap <tab> <c-r>=InsertTabWrapper ("forward")<cr>
 inoremap <s-tab> <c-r>=InsertTabWrapper ("backward")<cr>
 
 let Tlist_Use_Right_Window   = 1
+
+if &readonly == 1
+    set nofoldenable
+    nmap <F10> :qa<cr>
+    nmap <Esc> :qa!<CR>
+    nmap <Space> <PageDown>
+endif
+
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
+
+set complete=""
+set complete+=.
+set complete+=k
+set complete+=b
+set completeopt-=preview
+set completeopt+=longest
 
 " end
