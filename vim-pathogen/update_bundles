@@ -6,7 +6,6 @@
 git_bundles = %w{
   git://github.com/elzr/vim-json.git
   git://github.com/scrooloose/nerdtree.git
-  git://github.com/vim-scripts/ScrollColors.git
   git://github.com/corntrace/bufexplorer.git
   git://github.com/scrooloose/syntastic.git
   git://github.com/vim-scripts/taglist.vim.git
@@ -16,6 +15,7 @@ git_bundles = %w{
   git://github.com/groenewege/vim-less.git
   git://github.com/tpope/vim-fugitive.git
   git://github.com/ervandew/supertab.git
+  git://github.com/mattn/emmet-vim.git
 }
 
 require 'fileutils'
