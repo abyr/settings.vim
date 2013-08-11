@@ -1,7 +1,10 @@
 "
 " abyr
 "
-colorscheme wombat
+colorscheme wombat256
+
+call pathogen#infect()
+call pathogen#helptags()
 
 filetype off
 filetype plugin indent on
