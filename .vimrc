@@ -45,6 +45,9 @@ set novisualbell
 set nobackup
 set noswapfile
 
+# remove unwanted whitespaces
+autocmd BufWritePre * :%s/\s\+$//e
+
 set encoding=utf8
 
 filetype plugin on
